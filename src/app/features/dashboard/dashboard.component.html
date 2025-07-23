@@ -1,0 +1,117 @@
+<!-- src/app/features/dashboard/dashboard.component.html -->
+<div class="dashboard">
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-container">
+    <div class="breadcrumb">
+      <span class="breadcrumb-item">{{ translations.dashboard?.title || 'Dashboard' }}</span>
+      <div class="breadcrumb-arrow"></div>
+      <span class="breadcrumb-current">{{ translations.dashboard?.title || 'Dashboard' }}</span>
+    </div>
+  </div>
+
+  <!-- Dashboard Header with Stats -->
+  <div class="dashboard-header">
+    <h1 class="dashboard-title">{{ translations.dashboard?.title || 'Dashboard' }}</h1>
+    
+    <!-- Stats Cards -->
+    <div class="stats-grid">
+      <div class="stat-card" 
+           *ngFor="let stat of statsData" 
+           [style.background]="stat.color">
+        <div class="stat-icon-container">
+          <div class="stat-icon" [ngClass]="'icon-' + stat.icon"></div>
+        </div>
+        <div class="stat-content">
+          <div class="stat-title">{{ getStatTitle(stat) }}</div>
+          <div class="stat-value">{{ stat.value }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts Section -->
+  <div class="charts-section">
+    <!-- Monthly Line Chart -->
+    <div class="chart-container large">
+      <div class="chart-header">
+        <h3 class="chart-title">{{ translations.dashboard?.allTicketsAtMonth || 'All Tickets at Month' }}</h3>
+        <div class="chart-controls">
+          <div class="chart-legend">
+            <div class="legend-item">
+              <div class="legend-color new"></div>
+              <span>{{ translations.chartLabels?.newTicket || 'New Ticket' }}</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color complete"></div>
+              <span>{{ translations.chartLabels?.complete || 'Complete' }}</span>
+            </div>
+          </div>
+          <div class="dropdown-controls">
+            <select class="dropdown" [(ngModel)]="selectedMonth" (change)="onMonthChange($event)">
+              <option *ngFor="let month of months" [value]="month">
+                {{ getTranslatedMonth(month) }}
+              </option>
+            </select>
+            <select class="dropdown" [(ngModel)]="selectedYear" (change)="onYearChange($event)">
+              <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="chart-content">
+        <canvas #monthlyLineChart></canvas>
+      </div>
+    </div>
+
+    <!-- Pie Chart -->
+    <div class="chart-container small">
+      <div class="chart-header">
+        <h3 class="chart-title">{{ translations.dashboard?.ticketSummaryByCategories || 'Ticket Summary by Categories' }}</h3>
+      </div>
+      <div class="chart-content">
+        <canvas #pieChart></canvas>
+      </div>
+      <div class="pie-legend">
+        <div class="legend-grid">
+          <div class="legend-column">
+            <div class="legend-item">
+              <div class="legend-dot" style="background: #1FBCD5;"></div>
+              <span>{{ getCategoryLabel('dataEntryIssue') }}</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-dot" style="background: #DC3545;"></div>
+              <span>{{ getCategoryLabel('systemDown') }}</span>
+            </div>
+          </div>
+          <div class="legend-column">
+            <div class="legend-item">
+              <div class="legend-dot" style="background: #5873F8;"></div>
+              <span>{{ getCategoryLabel('bugIssue') }}</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-dot" style="background: #6C757D;"></div>
+              <span>{{ getCategoryLabel('others') }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category Summary Chart -->
+  <div class="chart-container-full">
+    <div class="chart-header">
+      <h3 class="chart-title">{{ translations.dashboard?.allTicketSummaryByCategories || 'All Ticket Summary by Categories' }}</h3>
+      <div class="chart-controls">
+        <div class="dropdown-controls">
+          <select class="dropdown" [(ngModel)]="categorySummaryYear" (change)="onCategorySummaryYearChange($event)">
+            <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="chart-content-full">
+      <canvas #categoryLineChart></canvas>
+    </div>
+  </div>
+</div>

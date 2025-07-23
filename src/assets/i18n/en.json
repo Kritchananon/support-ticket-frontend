@@ -1,0 +1,79 @@
+{
+  "sidebar": {
+    "logo": "Support Ticket",
+    "dashboard": "Dashboard",
+    "newTicket": "New Ticket",
+    "allTickets": "All Tickets",
+    "report": "Report",
+    "weeklyReport": "Weekly Report",
+    "monthlyReport": "Monthly Report",
+    "exportTicket": "Export Ticket",
+    "setting": "Setting",
+    "general": "General",
+    "userAccount": "User Account",
+    "project": "Project",
+    "ticketCategories": "Ticket Categories"
+  },
+  "navbar": {
+    "language": "Language",
+    "thai": "Thai",
+    "english": "English",
+    "profile": "My Profile",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "selectMonth": "Select Month",
+    "selectYear": "Select Year",
+    "totalTickets": "Total Tickets",
+    "newTickets": "New",
+    "inProgress": "In Progress",
+    "completed": "Completed",
+    "dailyChart": "Daily Report",
+    "monthlyChart": "Monthly Report",
+    "categoryChart": "Category Summary",
+    "allTicketsAtMonth": "All Tickets at Month",
+    "ticketSummaryByCategories": "Ticket Summary by Categories",
+    "allTicketSummaryByCategories": "All Ticket Summary by Categories"
+  },
+  "categories": {
+    "dataEntryIssue": "Data Entry Issue",
+    "systemDown": "System Down/Unavailable",
+    "bugIssue": "Bug Issue",
+    "others": "Others"
+  },
+  "months": {
+    "january": "January",
+    "february": "February",
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June",
+    "july": "July",
+    "august": "August",
+    "september": "September",
+    "october": "October",
+    "november": "November",
+    "december": "December"
+  },
+  "monthsShort": {
+    "jan": "Jan",
+    "feb": "Feb",
+    "mar": "Mar",
+    "apr": "Apr",
+    "may": "May",
+    "jun": "Jun",
+    "jul": "Jul",
+    "aug": "Aug",
+    "sep": "Sep",
+    "oct": "Oct",
+    "nov": "Nov",
+    "dec": "Dec"
+  },
+  "chartLabels": {
+    "newTicket": "New Ticket",
+    "complete": "Complete",
+    "ticket": "Ticket"
+  }
+}

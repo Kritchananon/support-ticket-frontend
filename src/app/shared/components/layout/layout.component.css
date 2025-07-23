@@ -1,0 +1,26 @@
+/* src/app/shared/components/layout/layout.component.css */
+.layout-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: #F5F5F9;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 249px;
+}
+
+.content-area {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+}

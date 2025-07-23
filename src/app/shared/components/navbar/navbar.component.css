@@ -1,0 +1,446 @@
+/* src/app/shared/components/navbar/navbar.component.css */
+.navbar {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 4px rgba(134, 134, 134, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 20px;
+  z-index: 999;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Language Selector */
+.language-selector {
+  position: relative;
+}
+
+.language-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background: transparent;
+  border: 1px solid transparent;
+  min-width: 80px;
+  height: 40px;
+}
+
+.language-button:hover {
+  background: rgba(88, 115, 248, 0.05);
+  border-color: rgba(88, 115, 248, 0.1);
+}
+
+.language-button.loading {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+/* Spinner */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #5873F8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Flag Icons */
+.flag-icon {
+  width: 24px;
+  height: 18px;
+  border-radius: 3px;
+  background: #D9D9D9;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.flag-icon.th {
+  background: linear-gradient(to bottom, 
+    #ED1C24 0%, #ED1C24 16.67%, 
+    #FFFFFF 16.67%, #FFFFFF 33.33%,
+    #002868 33.33%, #002868 66.67%,
+    #FFFFFF 66.67%, #FFFFFF 83.33%,
+    #ED1C24 83.33%, #ED1C24 100%
+  );
+}
+
+.flag-icon.en {
+  background: linear-gradient(-45deg, #012169 25%, transparent 25%), 
+              linear-gradient(45deg, #012169 25%, transparent 25%), 
+              linear-gradient(-45deg, transparent 75%, #012169 75%), 
+              linear-gradient(45deg, transparent 75%, #012169 75%);
+  background-size: 6px 6px;
+  background-position: 0 0, 0 3px, 3px -3px, -3px 0px;
+}
+
+.flag-icon.en::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, transparent 40%, #FFFFFF 40%, #FFFFFF 60%, transparent 60%),
+    linear-gradient(0deg, transparent 40%, #FFFFFF 40%, #FFFFFF 60%, transparent 60%),
+    linear-gradient(90deg, transparent 45%, #DC143C 45%, #DC143C 55%, transparent 55%),
+    linear-gradient(0deg, transparent 45%, #DC143C 45%, #DC143C 55%, transparent 55%);
+}
+
+.language-text {
+  font-family: 'Noto Sans Thai', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  color: #202020;
+  flex-shrink: 0;
+}
+
+/* Dropdown Arrow */
+.dropdown-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: #6B7280;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+/* User Section */
+.user-section {
+  position: relative;
+}
+
+.user-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background: transparent;
+  border: 1px solid transparent;
+  min-height: 40px;
+}
+
+.user-button:hover {
+  background: rgba(88, 115, 248, 0.05);
+  border-color: rgba(88, 115, 248, 0.1);
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #F3F4F6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-fallback {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  color: #6B7280;
+}
+
+.user-name {
+  font-family: 'Noto Sans Thai', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  color: #202020;
+  white-space: nowrap;
+}
+
+/* Dropdown Menus */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 180px;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.2s ease;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: 16px;
+  width: 12px;
+  height: 12px;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-bottom: none;
+  border-right: none;
+  transform: rotate(45deg);
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-family: 'Noto Sans Thai', sans-serif;
+  font-size: 14px;
+  color: #374151;
+  position: relative;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background: #F9FAFB;
+}
+
+.dropdown-item.active {
+  background: rgba(88, 115, 248, 0.05);
+  color: #5873F8;
+}
+
+.dropdown-item.logout {
+  color: #DC2626;
+}
+
+.dropdown-item.logout:hover {
+  background: rgba(220, 38, 38, 0.05);
+}
+
+/* Item Icons */
+.item-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+/* Check Icon */
+.check-icon {
+  margin-left: auto;
+  color: #059669;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* Dropdown Divider */
+.dropdown-divider {
+  height: 1px;
+  background: #E5E7EB;
+  margin: 4px 0;
+}
+
+/* Language Dropdown Specific */
+.language-dropdown {
+  min-width: 140px;
+}
+
+.language-dropdown .dropdown-item {
+  padding: 10px 14px;
+}
+
+/* User Dropdown Specific */
+.user-dropdown {
+  min-width: 200px;
+}
+
+/* Debug Panel (Development Only) */
+.debug-panel {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #1F2937;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  z-index: 9999;
+  display: none; /* ซ่อนใน production */
+}
+
+.debug-panel button {
+  background: #3B82F6;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 16px;
+  }
+  
+  .navbar-actions {
+    gap: 16px;
+  }
+  
+  .user-name {
+    display: none;
+  }
+  
+  .language-text {
+    font-size: 12px;
+  }
+  
+  .dropdown-menu {
+    min-width: 160px;
+    right: -10px;
+  }
+  
+  .dropdown-menu::before {
+    right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-actions {
+    gap: 12px;
+  }
+  
+  .language-button,
+  .user-button {
+    padding: 6px 8px;
+    min-width: auto;
+  }
+  
+  .flag-icon {
+    width: 20px;
+    height: 15px;
+  }
+}
+
+/* Accessibility */
+.dropdown-item:focus-visible {
+  outline: 2px solid #5873F8;
+  outline-offset: -2px;
+}
+
+.language-button:focus-visible,
+.user-button:focus-visible {
+  outline: 2px solid #5873F8;
+  outline-offset: 2px;
+}
+
+/* Animation for smooth transitions */
+.dropdown-menu {
+  animation-duration: 0.2s;
+  animation-timing-function: ease-out;
+}
+
+.dropdown-menu.show {
+  animation-name: dropdownShow;
+}
+
+@keyframes dropdownShow {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Loading state animation */
+.language-button.loading .language-text {
+  opacity: 0.6;
+}
+
+/* Hover effects */
+.dropdown-item {
+  transition: all 0.15s ease;
+}
+
+.dropdown-item:hover .item-icon {
+  transform: scale(1.1);
+}
+
+/* Active state for better UX */
+.language-button:active,
+.user-button:active {
+  transform: scale(0.98);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .dropdown-menu {
+    border: 2px solid #000;
+  }
+  
+  .dropdown-item:hover {
+    background: #000;
+    color: #fff;
+  }
+}

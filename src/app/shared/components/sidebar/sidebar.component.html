@@ -1,0 +1,88 @@
+<!-- src/app/shared/components/sidebar/sidebar.component.html -->
+<div class="sidebar">
+  <div class="sidebar-content">
+    <!-- Logo Section -->
+    <div class="logo-section">
+      <div class="logo-container">
+        <div class="logo-icon">
+          <div class="logo-circle">
+            <div class="logo-inner"></div>
+          </div>
+        </div>
+      </div>
+      <span class="logo-text">{{ t('sidebar.logo', 'Support Ticket') }}</span>
+    </div>
+
+    <!-- Menu Section -->
+    <div class="menu-section">
+      <!-- Dashboard -->
+      <a routerLink="/dashboard" 
+         class="menu-item"
+         [class.active]="isActiveRoute('/dashboard')">
+        <div class="menu-icon dashboard-icon"></div>
+        <span class="menu-text">{{ t('sidebar.dashboard', 'Dashboard') }}</span>
+      </a>
+
+      <!-- New Ticket -->
+      <a routerLink="/new-ticket" 
+         class="menu-item"
+         [class.active]="isActiveRoute('/new-ticket')">
+        <div class="menu-icon ticket-icon"></div>
+        <span class="menu-text">{{ t('sidebar.newTicket', 'New Ticket') }}</span>
+      </a>
+
+      <!-- All Ticket -->
+      <a routerLink="/all-tickets" 
+         class="menu-item"
+         [class.active]="isActiveRoute('/all-tickets')">
+        <div class="menu-icon all-ticket-icon"></div>
+        <span class="menu-text">{{ t('sidebar.allTickets', 'All Tickets') }}</span>
+      </a>
+
+      <!-- Report -->
+      <div class="menu-item expandable" (click)="toggleReport()">
+        <div class="menu-main">
+          <div class="menu-icon report-icon"></div>
+          <span class="menu-text">{{ t('sidebar.report', 'Report') }}</span>
+        </div>
+        <div class="chevron" [class.expanded]="isReportExpanded"></div>
+      </div>
+      
+      <div class="submenu" [class.expanded]="isReportExpanded">
+        <a routerLink="/weekly-report" class="submenu-item">
+          {{ t('sidebar.weeklyReport', 'Weekly Report') }}
+        </a>
+        <a routerLink="/monthly-report" class="submenu-item">
+          {{ t('sidebar.monthlyReport', 'Monthly Report') }}
+        </a>
+        <a routerLink="/export-ticket" class="submenu-item">
+          {{ t('sidebar.exportTicket', 'Export Ticket') }}
+        </a>
+      </div>
+
+      <!-- Setting -->
+      <div class="menu-item expandable" (click)="toggleSetting()">
+        <div class="menu-main">
+          <div class="menu-icon setting-icon"></div>
+          <span class="menu-text">{{ t('sidebar.setting', 'Setting') }}</span>
+        </div>
+        <div class="chevron" [class.expanded]="isSettingExpanded"></div>
+      </div>
+      
+      <div class="submenu" [class.expanded]="isSettingExpanded">
+        <a routerLink="/general" class="submenu-item">
+          {{ t('sidebar.general', 'General') }}
+        </a>
+        <a routerLink="/user-account" class="submenu-item">
+          {{ t('sidebar.userAccount', 'User Account') }}
+        </a>
+        <a routerLink="/project" class="submenu-item">
+          {{ t('sidebar.project', 'Project') }}
+        </a>
+        <a routerLink="/ticket-categories" class="submenu-item">
+          {{ t('sidebar.ticketCategories', 'Ticket Categories') }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

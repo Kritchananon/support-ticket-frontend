@@ -1,0 +1,79 @@
+{
+  "sidebar": {
+    "logo": "Support Ticket",
+    "dashboard": "แดชบอร์ด",
+    "newTicket": "สร้างตั๋วใหม่",
+    "allTickets": "ตั๋วทั้งหมด",
+    "report": "รายงาน",
+    "weeklyReport": "รายงานรายสัปดาห์",
+    "monthlyReport": "รายงานรายเดือน",
+    "exportTicket": "ส่งออกตั๋ว",
+    "setting": "ตั้งค่า",
+    "general": "ทั่วไป",
+    "userAccount": "บัญชีผู้ใช้",
+    "project": "โครงการ",
+    "ticketCategories": "หมวดหมู่ตั๋ว"
+  },
+  "navbar": {
+    "language": "ภาษา",
+    "thai": "ไทย",
+    "english": "อังกฤษ",
+    "profile": "โปรไฟล์ของฉัน",
+    "settings": "ตั้งค่า",
+    "logout": "ออกจากระบบ"
+  },
+  "dashboard": {
+    "title": "แดชบอร์ด",
+    "selectMonth": "เลือกเดือน",
+    "selectYear": "เลือกปี",
+    "totalTickets": "ตั๋วทั้งหมด",
+    "newTickets": "ตั๋วใหม่",
+    "inProgress": "กำลังดำเนินการ",
+    "completed": "เสร็จสิ้น",
+    "dailyChart": "รายงานรายวัน",
+    "monthlyChart": "รายงานรายเดือน",
+    "categoryChart": "สรุปตั๋วตามหมวดหมู่",
+    "allTicketsAtMonth": "ตั๋วทั้งหมดรายเดือน",
+    "ticketSummaryByCategories": "สรุปตั๋วตามหมวดหมู่",
+    "allTicketSummaryByCategories": "สรุปตั๋วทั้งหมดตามหมวดหมู่"
+  },
+  "categories": {
+    "dataEntryIssue": "บันทึกข้อมูลไม่ได้",
+    "systemDown": "ระบบล้ม/ใช้งานไม่ได้",
+    "bugIssue": "ปัญหาเจอบัค",
+    "others": "อื่นๆ"
+  },
+  "months": {
+    "january": "มกราคม",
+    "february": "กุมภาพันธ์",
+    "march": "มีนาคม",
+    "april": "เมษายน",
+    "may": "พฤษภาคม",
+    "june": "มิถุนายน",
+    "july": "กรกฎาคม",
+    "august": "สิงหาคม",
+    "september": "กันยายน",
+    "october": "ตุลาคม",
+    "november": "พฤศจิกายน",
+    "december": "ธันวาคม"
+  },
+  "monthsShort": {
+    "jan": "ม.ค.",
+    "feb": "ก.พ.",
+    "mar": "มี.ค.",
+    "apr": "เม.ย.",
+    "may": "พ.ค.",
+    "jun": "มิ.ย.",
+    "jul": "ก.ค.",
+    "aug": "ส.ค.",
+    "sep": "ก.ย.",
+    "oct": "ต.ค.",
+    "nov": "พ.ย.",
+    "dec": "ธ.ค."
+  },
+  "chartLabels": {
+    "newTicket": "ตั๋วใหม่",
+    "complete": "เสร็จสิ้น",
+    "ticket": "ตั๋ว"
+  }
+}
