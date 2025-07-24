@@ -4,7 +4,7 @@
   <div class="breadcrumb-container">
     <div class="breadcrumb">
       <span class="breadcrumb-item">{{ translations.dashboard?.title || 'Dashboard' }}</span>
-      <div class="breadcrumb-arrow"></div>
+      <i class="bi bi-chevron-right breadcrumb-arrow"></i>
       <span class="breadcrumb-current">{{ translations.dashboard?.title || 'Dashboard' }}</span>
     </div>
   </div>
@@ -19,7 +19,7 @@
            *ngFor="let stat of statsData" 
            [style.background]="stat.color">
         <div class="stat-icon-container">
-          <div class="stat-icon" [ngClass]="'icon-' + stat.icon"></div>
+          <i class="bi stat-icon" [ngClass]="getStatIconClass(stat.icon)"></i>
         </div>
         <div class="stat-content">
           <div class="stat-title">{{ getStatTitle(stat) }}</div>

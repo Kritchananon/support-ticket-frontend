@@ -1,4 +1,4 @@
-// src/app/features/dashboard/dashboard.component.ts - Updated imports
+// src/app/features/dashboard/dashboard.component.ts - Updated with Bootstrap Icons
 import { Component, OnInit, AfterViewInit, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -393,6 +393,21 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
         return this.translations.dashboard?.completed || 'Complete';
       default:
         return stat.title;
+    }
+  }
+
+  getStatIconClass(iconType: string): string {
+    switch(iconType) {
+      case 'total':
+        return 'bi-ticket-detailed-fill';
+      case 'new':
+        return 'bi-ticket-perforated-fill';
+      case 'progress':
+        return 'bi-arrow-clockwise';
+      case 'complete':
+        return 'bi-check-circle-fill';
+      default:
+        return 'bi-circle';
     }
   }
 

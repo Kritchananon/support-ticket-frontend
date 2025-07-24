@@ -6,7 +6,7 @@
       <div class="logo-container">
         <div class="logo-icon">
           <div class="logo-circle">
-            <div class="logo-inner"></div>
+            <i class="bi bi-headset text-primary" style="font-size: 24px;"></i>
           </div>
         </div>
       </div>
@@ -19,7 +19,7 @@
       <a routerLink="/dashboard" 
          class="menu-item"
          [class.active]="isActiveRoute('/dashboard')">
-        <div class="menu-icon dashboard-icon"></div>
+        <i class="bi bi-grid-3x3-gap menu-icon"></i>
         <span class="menu-text">{{ t('sidebar.dashboard', 'Dashboard') }}</span>
       </a>
 
@@ -27,7 +27,7 @@
       <a routerLink="/new-ticket" 
          class="menu-item"
          [class.active]="isActiveRoute('/new-ticket')">
-        <div class="menu-icon ticket-icon"></div>
+        <i class="bi bi-ticket-perforated menu-icon"></i>
         <span class="menu-text">{{ t('sidebar.newTicket', 'New Ticket') }}</span>
       </a>
 
@@ -35,27 +35,30 @@
       <a routerLink="/all-tickets" 
          class="menu-item"
          [class.active]="isActiveRoute('/all-tickets')">
-        <div class="menu-icon all-ticket-icon"></div>
+        <i class="bi bi-ticket-detailed menu-icon"></i>
         <span class="menu-text">{{ t('sidebar.allTickets', 'All Tickets') }}</span>
       </a>
 
       <!-- Report -->
       <div class="menu-item expandable" (click)="toggleReport()">
         <div class="menu-main">
-          <div class="menu-icon report-icon"></div>
+          <i class="bi bi-bar-chart-line menu-icon"></i>
           <span class="menu-text">{{ t('sidebar.report', 'Report') }}</span>
         </div>
-        <div class="chevron" [class.expanded]="isReportExpanded"></div>
+        <i class="bi bi-chevron-down chevron" [class.expanded]="isReportExpanded"></i>
       </div>
       
       <div class="submenu" [class.expanded]="isReportExpanded">
         <a routerLink="/weekly-report" class="submenu-item">
+          <i class="bi bi-calendar-week me-2"></i>
           {{ t('sidebar.weeklyReport', 'Weekly Report') }}
         </a>
         <a routerLink="/monthly-report" class="submenu-item">
+          <i class="bi bi-calendar-month me-2"></i>
           {{ t('sidebar.monthlyReport', 'Monthly Report') }}
         </a>
         <a routerLink="/export-ticket" class="submenu-item">
+          <i class="bi bi-download me-2"></i>
           {{ t('sidebar.exportTicket', 'Export Ticket') }}
         </a>
       </div>
@@ -63,23 +66,27 @@
       <!-- Setting -->
       <div class="menu-item expandable" (click)="toggleSetting()">
         <div class="menu-main">
-          <div class="menu-icon setting-icon"></div>
+          <i class="bi bi-gear menu-icon"></i>
           <span class="menu-text">{{ t('sidebar.setting', 'Setting') }}</span>
         </div>
-        <div class="chevron" [class.expanded]="isSettingExpanded"></div>
+        <i class="bi bi-chevron-down chevron" [class.expanded]="isSettingExpanded"></i>
       </div>
       
       <div class="submenu" [class.expanded]="isSettingExpanded">
         <a routerLink="/general" class="submenu-item">
+          <i class="bi bi-sliders me-2"></i>
           {{ t('sidebar.general', 'General') }}
         </a>
         <a routerLink="/user-account" class="submenu-item">
+          <i class="bi bi-person-circle me-2"></i>
           {{ t('sidebar.userAccount', 'User Account') }}
         </a>
         <a routerLink="/project" class="submenu-item">
+          <i class="bi bi-folder me-2"></i>
           {{ t('sidebar.project', 'Project') }}
         </a>
         <a routerLink="/ticket-categories" class="submenu-item">
+          <i class="bi bi-tags me-2"></i>
           {{ t('sidebar.ticketCategories', 'Ticket Categories') }}
         </a>
       </div>

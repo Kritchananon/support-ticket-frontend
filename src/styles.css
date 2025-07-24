@@ -1,5 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-/* src/styles.css - Global Styles */
+/* Import Bootstrap 5 - Fixed path */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap');
@@ -39,6 +39,16 @@ html, body {
   --border-radius-lg: 12px;
   --shadow: 0px 2px 4px rgba(134, 134, 134, 0.25);
   --shadow-lg: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  
+  /* Override Bootstrap colors with your custom colors */
+  --bs-primary: #5873F8;
+  --bs-success: #28A745;
+  --bs-info: #1FBCD5;
+  --bs-warning: #FFC107;
+  --bs-danger: #DC3545;
+  --bs-secondary: #6C757D;
+  --bs-light: #F5F5F9;
+  --bs-dark: #212121;
 }
 
 /* Typography */
@@ -56,60 +66,43 @@ p {
   margin: 0;
 }
 
-/* Utility Classes */
-.d-flex { display: flex; }
-.d-block { display: block; }
-.d-none { display: none; }
-.flex-column { flex-direction: column; }
-.flex-row { flex-direction: row; }
-.justify-content-center { justify-content: center; }
-.justify-content-between { justify-content: space-between; }
-.justify-content-end { justify-content: flex-end; }
-.align-items-center { align-items: center; }
-.align-items-start { align-items: flex-start; }
-.align-items-end { align-items: flex-end; }
-
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
-
-.w-100 { width: 100%; }
-.h-100 { height: 100%; }
-
-.m-0 { margin: 0; }
-.m-1 { margin: 0.25rem; }
-.m-2 { margin: 0.5rem; }
-.m-3 { margin: 1rem; }
-.m-4 { margin: 1.5rem; }
-.m-5 { margin: 3rem; }
-
-.p-0 { padding: 0; }
-.p-1 { padding: 0.25rem; }
-.p-2 { padding: 0.5rem; }
-.p-3 { padding: 1rem; }
-.p-4 { padding: 1.5rem; }
-.p-5 { padding: 3rem; }
-
-/* Responsive Breakpoints */
-@media (max-width: 575.98px) {
-  .d-sm-none { display: none !important; }
-  .d-sm-block { display: block !important; }
+/* Override Bootstrap styles to use Noto Sans Thai */
+.btn {
+  font-family: 'Noto Sans Thai', sans-serif;
 }
 
-@media (max-width: 767.98px) {
-  .d-md-none { display: none !important; }
-  .d-md-block { display: block !important; }
+.form-control, .form-select {
+  font-family: 'Noto Sans Thai', sans-serif;
 }
 
-@media (max-width: 991.98px) {
-  .d-lg-none { display: none !important; }
-  .d-lg-block { display: block !important; }
+.card-title, .card-text {
+  font-family: 'Noto Sans Thai', sans-serif;
 }
 
-@media (max-width: 1199.98px) {
-  .d-xl-none { display: none !important; }
-  .d-xl-block { display: block !important; }
+.breadcrumb-item {
+  font-family: 'Noto Sans Thai', sans-serif;
 }
+
+/* Custom Bootstrap color classes */
+.bg-custom-primary { background-color: var(--primary-color) !important; }
+.text-custom-primary { color: var(--primary-color) !important; }
+.border-custom-primary { border-color: var(--primary-color) !important; }
+
+.bg-custom-success { background-color: var(--success-color) !important; }
+.text-custom-success { color: var(--success-color) !important; }
+.border-custom-success { border-color: var(--success-color) !important; }
+
+.bg-custom-info { background-color: var(--info-color) !important; }
+.text-custom-info { color: var(--info-color) !important; }
+.border-custom-info { border-color: var(--info-color) !important; }
+
+.bg-custom-warning { background-color: var(--secondary-color) !important; }
+.text-custom-warning { color: var(--secondary-color) !important; }
+.border-custom-warning { border-color: var(--secondary-color) !important; }
+
+.bg-custom-danger { background-color: var(--danger-color) !important; }
+.text-custom-danger { color: var(--danger-color) !important; }
+.border-custom-danger { border-color: var(--danger-color) !important; }
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
@@ -127,29 +120,6 @@ p {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
-}
-
-/* Button Base Styles */
-button {
-  font-family: 'Noto Sans Thai', sans-serif;
-  border: none;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-/* Form Elements */
-input, select, textarea {
-  font-family: 'Noto Sans Thai', sans-serif;
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-  padding: 8px 12px;
-  transition: border-color 0.2s ease;
-}
-
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: var(--primary-color);
 }
 
 /* Animation Classes */

@@ -1,9 +1,9 @@
-<!-- src/app/shared/components/navbar/navbar.component.html -->
+<!-- Alternative: ใช้ Globe Icon สำหรับปุ่มภาษา -->
 <div class="navbar" (click)="closeDropdowns()">
   <div class="navbar-content">
     <div class="navbar-actions">
       
-      <!-- Language Selector -->
+      <!-- Language Selector with Globe Icon -->
       <div class="language-selector" (click)="$event.stopPropagation()">
         <div class="language-button" 
              (click)="toggleLanguageDropdown($event)"
@@ -12,22 +12,15 @@
           <!-- Loading Spinner -->
           <div class="spinner" *ngIf="isLanguageLoading"></div>
           
-          <!-- Flag Icon -->
-          <div class="flag-icon" 
-               [class.th]="currentLanguage === 'th'"
-               [class.en]="currentLanguage === 'en'"
-               *ngIf="!isLanguageLoading"></div>
+          <!-- Globe Icon -->
+          <i class="bi bi-globe language-icon" *ngIf="!isLanguageLoading"></i>
           
           <!-- Language Text -->
           <span class="language-text">{{ getCurrentLanguageDisplay() }}</span>
           
           <!-- Dropdown Arrow -->
-          <div class="dropdown-arrow" 
-               [class.open]="isLanguageDropdownOpen">
-            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
-              <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
+          <i class="bi bi-chevron-down dropdown-arrow" 
+             [class.open]="isLanguageDropdownOpen"></i>
         </div>
         
         <!-- Language Dropdown -->
@@ -38,70 +31,55 @@
           <div class="dropdown-item" 
                (click)="changeLanguage('th', $event)"
                [class.active]="currentLanguage === 'th'">
-            <div class="flag-icon th"></div>
+            <span class="language-emoji">🇹🇭</span>
             <span>{{ getTranslation('navbar.thai', 'ไทย') }}</span>
-            <div class="check-icon" *ngIf="currentLanguage === 'th'">✓</div>
+            <i class="bi bi-check-lg check-icon" *ngIf="currentLanguage === 'th'"></i>
           </div>
           
           <!-- English Option -->
           <div class="dropdown-item" 
                (click)="changeLanguage('en', $event)"
                [class.active]="currentLanguage === 'en'">
-            <div class="flag-icon en"></div>
+            <span class="language-emoji">🇺🇸</span>
             <span>{{ getTranslation('navbar.english', 'English') }}</span>
-            <div class="check-icon" *ngIf="currentLanguage === 'en'">✓</div>
+            <i class="bi bi-check-lg check-icon" *ngIf="currentLanguage === 'en'"></i>
           </div>
         </div>
       </div>
 
-      <!-- User Section -->
+      <!-- User Section (ไม่เปลี่ยนแปลง) -->
       <div class="user-section" (click)="$event.stopPropagation()">
         <div class="user-button" (click)="toggleUserDropdown($event)">
           <div class="avatar">
-            <img src="assets/images/boy_3984623.png" 
-                 alt="User Avatar" 
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-            <div class="avatar-fallback">👤</div>
+            <i class="bi bi-person-circle" style="font-size: 28px; color: #6B7280;"></i>
           </div>
           <span class="user-name">Hi, wasan</span>
           
-          <!-- User Dropdown Arrow -->
-          <div class="dropdown-arrow" 
-               [class.open]="isUserDropdownOpen">
-            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
-              <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
+          <i class="bi bi-chevron-down dropdown-arrow" 
+             [class.open]="isUserDropdownOpen"></i>
         </div>
         
-        <!-- User Dropdown -->
         <div class="dropdown-menu user-dropdown" 
              [class.show]="isUserDropdownOpen">
           
           <div class="dropdown-item">
-            <div class="item-icon">👤</div>
+            <i class="bi bi-person item-icon"></i>
             <span>{{ getTranslation('navbar.profile', 'My Profile') }}</span>
           </div>
           
           <div class="dropdown-item">
-            <div class="item-icon">⚙️</div>
+            <i class="bi bi-gear item-icon"></i>
             <span>{{ getTranslation('navbar.settings', 'Settings') }}</span>
           </div>
           
           <div class="dropdown-divider"></div>
           
           <div class="dropdown-item logout">
-            <div class="item-icon">🚪</div>
+            <i class="bi bi-box-arrow-right item-icon"></i>
             <span>{{ getTranslation('navbar.logout', 'Logout') }}</span>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  
-  <!-- Debug Panel (เอาออกใน production) -->
-  <div class="debug-panel" *ngIf="false">
-    <button (click)="debugTranslations()">Debug</button>
-    <small>Lang: {{ currentLanguage }} | Loading: {{ isLanguageLoading }} | Has Trans: {{ hasTranslations() }}</small>
   </div>
 </div>

@@ -40,13 +40,6 @@
   justify-content: center;
 }
 
-.logo-inner {
-  width: 30px;
-  height: 30px;
-  background: #5873F8;
-  border-radius: 4px;
-}
-
 .logo-text {
   font-family: 'Noto Sans Thai';
   font-weight: 600;
@@ -79,10 +72,16 @@
 
 .menu-item:hover {
   background: rgba(88, 115, 248, 0.05);
+  color: #212121;
+  text-decoration: none;
 }
 
 .menu-item.active {
   background: rgba(88, 115, 248, 0.1);
+  color: #5873F8;
+}
+
+.menu-item.active .menu-icon {
   color: #5873F8;
 }
 
@@ -96,32 +95,16 @@
   gap: 12px;
 }
 
+/* Bootstrap Icons Styling */
 .menu-icon {
   width: 24px;
   height: 24px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.dashboard-icon {
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>') center/contain no-repeat;
-}
-
-.ticket-icon {
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg>') center/contain no-repeat;
-}
-
-.all-ticket-icon {
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2Z"/></svg>') center/contain no-repeat;
-}
-
-.report-icon {
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>') center/contain no-repeat;
-}
-
-.setting-icon {
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>') center/contain no-repeat;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #212121;
+  transition: color 0.2s ease;
 }
 
 .menu-text {
@@ -134,9 +117,13 @@
 .chevron {
   width: 24px;
   height: 24px;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 9 6 6 6-6"/></svg>') center/contain no-repeat;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transform: rotate(-90deg);
   transition: transform 0.2s ease;
+  color: #6C757D;
 }
 
 .chevron.expanded {
@@ -150,11 +137,12 @@
 }
 
 .submenu.expanded {
-  max-height: 200px;
+  max-height: 300px;
 }
 
 .submenu-item {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 10px 0 10px 49px;
   color: #212121;
   text-decoration: none;
@@ -162,11 +150,27 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 120%;
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .submenu-item:hover {
   background: rgba(88, 115, 248, 0.05);
+  color: #212121;
+  text-decoration: none;
+}
+
+.submenu-item i {
+  font-size: 14px;
+  color: #6C757D;
+}
+
+/* Hover effects for icons */
+.menu-item:hover .menu-icon {
+  color: #5873F8;
+}
+
+.submenu-item:hover i {
+  color: #5873F8;
 }
 
 @media (max-width: 768px) {

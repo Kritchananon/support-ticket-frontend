@@ -39,9 +39,8 @@
 }
 
 .breadcrumb-arrow {
-  width: 16px;
-  height: 16px;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23414141" stroke-width="1.2"><path d="m9 18 6-6-6-6"/></svg>') center/contain no-repeat;
+  color: #414141;
+  font-size: 14px;
 }
 
 .dashboard-header {
@@ -91,27 +90,24 @@
 }
 
 .stat-icon {
-  width: 40px;
-  height: 40px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  font-size: 32px;
+  color: #5873F8;
 }
 
-.icon-total {
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%235873F8" stroke-width="4"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2Z"/></svg>') center/contain no-repeat;
+.stat-icon.bi-ticket-detailed-fill {
+  color: #5873F8;
 }
 
-.icon-new {
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23FFC107" stroke-width="4"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg>') center/contain no-repeat;
+.stat-icon.bi-ticket-perforated-fill {
+  color: #FFC107;
 }
 
-.icon-progress {
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%231FBCD5" stroke-width="4"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>') center/contain no-repeat;
+.stat-icon.bi-arrow-clockwise {
+  color: #1FBCD5;
 }
 
-.icon-complete {
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%2328A745" stroke-width="4"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>') center/contain no-repeat;
+.stat-icon.bi-check-circle-fill {
+  color: #28A745;
 }
 
 .stat-content {
@@ -346,8 +342,7 @@
   }
   
   .stat-icon {
-    width: 30px;
-    height: 30px;
+    font-size: 24px;
   }
   
   .stat-title {
